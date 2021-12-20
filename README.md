@@ -12,33 +12,62 @@ Role Variables
 --------------
 
 Kibana Version to Install
-`kibversion: "7.x"`
+```
+kibversion: "7.x"
+```
 Package Name
-`kibpackage: kibana`
+```
+kibpackage: kibana
+```
 Package can be `present`, `absent` or `latest`.
-`kibpackage_state: present`
+```
+kibpackage_state: present
+```
 
 This is the kibana.yml file template
-`kibconfig_template: kibana.yml.j2`
+
+```
+kibconfig_template: kibana.yml.j2
+```
+
 This is where to put the kibana.yml file
-`kibconfig_file_path: /etc/kibana/kibana.yml`
+
+```
+kibconfig_file_path: /etc/kibana/kibana.yml
+```
 
 To enable Kibana service
-`kibservice_state: started`
+
+```
+kibservice_state: started
+
+```
 To make sure its enabled on boot
-`kibservice_enabled: true`
+
+```
+kibservice_enabled: true
+```
 
 Basic HTTP authentication settings
-```kibelasticsearch_username: username
-kibelasticsearch_password: hunter2```
+
+```
+kibelasticsearch_username: username
+kibelasticsearch_password: hunter2
+```
 
 IP and Port settings, and optional display name.
-```kibserver_port: 5601
+
+```
+kibserver_port: 5601
 kibserver_host: 0.0.0.0
-kibserver_name: test-kibana```
+kibserver_name: test-kibana
+```
 
 The URL of the Elasticsearch instance to use for all your queries
-```kibelastic_search_url: http://localhost:9200```
+
+```
+kibelastic_search_url: http://localhost:9200
+```
 
 Dependencies
 ------------

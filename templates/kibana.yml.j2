@@ -28,7 +28,7 @@ server.name: "{{ kibserver_name }}"
 {% if kibversion == "6.x" %}
 elasticsearch.url: {{ kibelastic_search_url }}
 {% else %}
-elasticsearch.hosts: {{ kibelastic_search_hosts }}
+elasticsearch.hosts: {{ kibelastic_search_url }}
 {% endif %}
 
 # When this setting's value is true Kibana uses the hostname specified in the server.host

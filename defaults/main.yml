@@ -30,5 +30,4 @@ kibserver_name: test-kibana
 
 # Elasticsearch hosts
 
-kibelastic_search_hosts: http://localhost:9200
-kibelastic_search_url: url
+kibelastic_search_url: http://localhost:9200

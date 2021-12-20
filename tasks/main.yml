@@ -1,0 +1,38 @@
+---
+# tasks file for kibana
+
+# Check for OS Family
+
+- name: If RedHat
+  include: RedHat-setup.yml
+  when: ansible_os_family == 'RedHat'
+
+- name: If Debian
+  include: Debian-setup.yml
+  when: ansible_os_family == 'Debian'
+
+#Installing Kibana
+
+- name: Install Kibana
+  package:
+    name: "{{ kibpackage }}"
+    state: "{{ kibpackage_state }}"
+
+# Enable start at boot
+
+- name: Enable Kibana to start at boot
+  service:
+    name: kibana
+    state: "{{ kibservice_state }}"
+    enabled: "{{ kibservice_enabled }}"
+
+# Replace the default Kibana.yml file with our updated one
+
+- name: Replace default Kibana.yml with our updated Kibana.yml
+  template:
+    src: "{{ kibconfig_template }}"
+    dest: "{{ kibconfig_file_path }}"
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart kibana

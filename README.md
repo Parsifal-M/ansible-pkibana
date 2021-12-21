@@ -5,8 +5,11 @@ Installs Kibana on the target machine.
 
 Requirements
 ------------
+`Ansible` and below is the ansible galaxy installation command:
 
-None.
+```
+ansible-galaxy install parsifal_m.ansible_pkibana
+```
 
 Role Variables
 --------------
